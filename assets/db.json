@@ -1,0 +1,28 @@
+{
+    "menu": [
+        {
+            "id": 1,
+            "titulo": "Contenido del Home",
+            "texto": "   Lorem ipsum dolor sit amet consectetur, adipisicing elit. In repellat unde repellendus commodi aspernatur odit, distinctio nostrum non. Et, iusto eveniet sapiente deserunt corporis aspernatur ipsum tempore accusantium fugiat porro.",
+            "imagen": "https://picsum.photos/id/40/200/200"
+        },
+        {
+            "id": 2,
+            "titulo": "Contenido del Home",
+            "texto": "   Lorem ipsum dolor sit amet consectetur, adipisicing elit. In repellat unde repellendus commodi aspernatur odit, distinctio nostrum non. Et, iusto eveniet sapiente deserunt corporis aspernatur ipsum tempore accusantium fugiat porro.",
+            "imagen": "https://picsum.photos/id/40/200/200"
+        },
+        {
+            "id": 3,
+            "titulo": "Contenido del Home",
+            "texto": "   Lorem ipsum dolor sit amet consectetur, adipisicing elit. In repellat unde repellendus commodi aspernatur odit, distinctio nostrum non. Et, iusto eveniet sapiente deserunt corporis aspernatur ipsum tempore accusantium fugiat porro.",
+            "imagen": "https://picsum.photos/id/40/200/200"
+        },
+        {
+            "id": 4,
+            "titulo": "Contenido del Home",
+            "texto": "   Lorem ipsum dolor sit amet consectetur, adipisicing elit. In repellat unde repellendus commodi aspernatur odit, distinctio nostrum non. Et, iusto eveniet sapiente deserunt corporis aspernatur ipsum tempore accusantium fugiat porro.",
+            "imagen": "https://picsum.photos/id/40/200/200"
+        }
+    ]
+}

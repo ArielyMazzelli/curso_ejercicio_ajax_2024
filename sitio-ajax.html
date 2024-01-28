@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio con AJAX</title>
+    <style>
+        html {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 992px;
+        }
+
+        .header {
+            padding: .5rem;
+            background-color: antiquewhite;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 3rem;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            font-size: 115%;
+        }
+
+        .menu a {
+            color: chocolate;
+            padding: 0 1vw;
+            transition: all .3s ease-in-out;
+        }
+
+        .menu a:hover {
+            opacity: .75;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <section class="header-content container">
+            <article class="logo">
+                <img src="/assets/img/calavera.png" alt="calavera">
+            </article>
+            <nav class="menu">
+                <a href="assets/home.html">Home</a>
+                <a href="assets/acerca.html">Acerca</a>
+                <a href="assets/servicios.html">Servicios</a>
+                <a href="assets/contacto.html">Contacto</a>
+            </nav>
+        </section>
+    </header>
+    <main class="container"></main>
+    <footer class="footer container">
+        <p>
+            <small>Sitio diseñado por ArIelY</small>
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script>
+        const d = document,
+            $main = d.querySelector("main"),
+            $a = d.querySelectorAll("a");
+
+        d.addEventListener("DOMContentLoaded", async (e) => {
+            try {
+                let res = await axios.get("assets/home.html"),
+                    $html = await res.data;
+
+                $main.innerHTML = $html
+            } catch (error) {
+                $main.innerHTML = `<h1>${error}</h1>`;
+            }
+
+        });
+
+        d.addEventListener("click", async (e) => {
+
+            if (e.target.matches(".menu a")) {
+                e.preventDefault();
+                try {
+                    let res = await axios.get(`${e.target.href}`),
+                        $html = await res.data;
+                    $main.innerHTML = $html
+                } catch (error) {
+                    $main.innerHTML = `<h1>${error}</h1>`
+                }
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
